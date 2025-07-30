@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nestjs:
+    build: .
+    container_name: nestjs-app
+    ports:
+      - "3009:3009"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local
